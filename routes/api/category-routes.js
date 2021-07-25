@@ -9,12 +9,12 @@ router.get("/", (req, res) => {
   Category.findAll({
     include: {
       model: Product,
-      attributes: ["id", "category_name"],
+      attributes: ["id", "product_name"],
     },
   })
     .then((category) => res.json(category))
     .catch((err) => {
-      console, log(err);
+      console.log(err);
       res.status(500).json(err);
     });
 });
@@ -33,7 +33,7 @@ router.get("/:id", (req, res) => {
   })
     .then((categoryDb) => res.json(categoryDb))
     .catch((err) => {
-      console, log(err);
+      console.log(err);
       res.status(500).json(err);
     });
 });
@@ -45,7 +45,7 @@ router.post("/", (req, res) => {
   })
     .then((categoryDb) => res.json(categoryDb))
     .catch((err) => {
-      console, log(err);
+      console.log(err);
       res.status(500).json(err);
     });
 });
